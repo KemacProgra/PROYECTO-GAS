@@ -1,0 +1,159 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
+
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+
+
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+}
+
+/* allow copy-paste */
+input, textarea  {
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+body {
+    /* margin: 0.5rem ; */
+    background: white ;
+    color: black ;
+}
+.myLabel {
+background: -moz-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #FF0000), color-stop(100%, #000000)); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* ie10+ */
+background: linear-gradient(45deg, #FF0000 0%, #000000 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#FF0000',GradientType=1 ); /* ie6-9 */
+	background-color:#599bb3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	padding:13px 20px;
+	text-decoration:none;
+}
+.myLabel1 {
+background: -moz-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #FF0000), color-stop(100%, #000000)); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* ie10+ */
+background: linear-gradient(45deg, #FF0000 0%, #000000 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#FF0000',GradientType=1 ); /* ie6-9 */
+	background-color:#599bb3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	padding:13px 32px;
+	text-decoration:none;
+}
+.myLabel2 {
+background: -moz-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #FF0000), color-stop(100%, #000000)); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, #FF0000 0%, #000000 100%); /* ie10+ */
+background: linear-gradient(45deg, #FF0000 0%, #000000 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#FF0000',GradientType=1 ); /* ie6-9 */
+	background-color:#599bb3;
+	display:inline-block;
+	color:#E48512;
+	font-family:Arial;
+	font-size:35px;
+    width: 90%;
+     font-style: italic;
+     margin: 0em 5%; 
+	text-decoration:none;
+    text-align: center;
+}
+.myButton {
+background: -moz-linear-gradient(45deg, #003333 0%, #05C1FF 50%, #003333 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #003333), color-stop(50%, #05C1FF), color-stop(100%, #003333)); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, #003333 0%, #05C1FF 50%, #003333 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, #003333 0%, #05C1FF 50%, #003333 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, #003333 0%, #05C1FF 50%, #003333 100%); /* ie10+ */
+background: linear-gradient(45deg, #003333 0%, #05C1FF 50%, #003333 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003333', endColorstr='#003333',GradientType=1 ); /* ie6-9 */
+	background-color:#dbe6c4;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	display:inline-block;
+	cursor:pointer;
+	color:#757d6f;
+	font-family:Arial;
+	font-size:21px;
+	font-weight:bold;
+    width: 100%;
+	padding:10px 40%;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0c93ab), color-stop(1, #dbe6c4));
+	background:-moz-linear-gradient(top, #0c93ab 5%, #dbe6c4 100%);
+	background:-webkit-linear-gradient(top, #0c93ab 5%, #dbe6c4 100%);
+	background:-o-linear-gradient(top, #0c93ab 5%, #dbe6c4 100%);
+	background:-ms-linear-gradient(top, #0c93ab 5%, #dbe6c4 100%);
+	background:linear-gradient(to bottom, #0c93ab 5%, #dbe6c4 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c93ab', endColorstr='#dbe6c4',GradientType=0);
+	background-color:#0c93ab;
+}
+.list li:hover {
+	background-color:#0c93ab;
+    text-align: center;
+}
+.list li:active {
+	position:relative;
+	top:1px;
+   color:#2dabf9;
+   box-shadow:inset 0px 1px 0px 0px #f9eca0;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+	background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+	background-color:#f0c911;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+   color:#2dabf9;
+   box-shadow:inset 0px 1px 0px 0px #f9eca0;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+	background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+	background-color:#f0c911;
+}

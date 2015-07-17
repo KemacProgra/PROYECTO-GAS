@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/mio.css">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+        <title>Blank App Designer Cordova Web App Project Template</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
+        <!-- Recommended location for your JavaScript libraries -->
+        <!-- These library references (below) are just examples to give you the general idea... -->
+        <script src="marker.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+        <!--  <script src="http://127.0.0.1:9090/socket.io/socket.io.js"></script>-->
+        <!-- <script src="lib/mc/hammer.js"></script> -->
+        <script src="http://127.0.0.1:9090/socket.io/socket.io.js"></script>
+        <!-- <script src="lib/ft/fastclick.js"></script> -->
+        <script type="application/javascript" src="js/listaProductos.js"></script>
+        <script type="application/javascript" src="js/Pedidos.js"></script>
+        <script type="application/javascript" src="js/EnvioPedido.js"></script>
+        <script type="application/javascript" src="js/distribuidor.js"></script>
+        <script type="application/javascript" src="js/acepterPedido.js"></script>
+        <script type="application/javascript" src="js/mapaCliente.js"></script>
+        <script type="application/javascript" src="js/mapaDistribuidor.js"></script>
+        <script type="application/javascript" src="js/inicioMapa.js"></script>
+
+        <!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <!--            
+            You may substitute jQuery for the App Framework selector library.
+            See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+        -->
+        <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
+        <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+    </head>
+
+    <body id="afui">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <header class="wrapping-col wrap-element uib_w_1" data-uib="app_framework/header" data-ver="2" id="af-header-0">
+            <h1>LOGEO</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_7 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-1"><a class="button backButton">Back</a>
+            <h1>PRODUCTOS</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_12 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-2"><a class="button backButton">Back</a>
+            <h1>MAPA</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_14 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-3"><a class="button backButton">Back</a>
+            <h1>PEDIDO</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_17 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-4"><a class="button backButton">Back</a>
+            <h1>RECEPCION DE PEDIDO</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_18 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-5"><a class="button backButton">Back</a>
+            <h1>MAPA UBICACION DEL CLIENTE</h1>
+        </header>
+
+        <div class="uwrap" id="content">
+
+            <div class="upage vertical-col panel style-66" id="idpagelogeo" data-header="af-header-0" data-footer="af-footer-1">
+                <div class="table-thing with-label widget uib_w_2 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="myLabel label-inline" for="idUsuario">USUARIO</label>
+
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idUsuario" value="Distribuidor">
+                </div>
+                <div class="table-thing with-label widget uib_w_3 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="myLabel label-inline" for="idContrasena">PASSWORD</label>
+
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idContrasena" value="Distribuidor">
+                </div>
+                <div class="table-thing with-label widget uib_w_4 d-margins" data-uib="app_framework/select" data-ver="1">
+                    <label class="myLabel label-inline" for="idSelectPerfil">PERFIL</label>
+
+                    <select class="wide-control" id="idSelectPerfil">
+                        <option>Cliente</option>
+                        <option>Distribuidor</option>
+                    </select>
+                </div><a class="myButton widget uib_w_5 d-margins icon user" data-uib="app_framework/button" data-ver="1">ACEPTAR</a><a class="myButton widget uib_w_6 d-margins icon close" data-uib="app_framework/button" data-ver="1">SALIR</a>
+
+            </div>
+            <div class="upage vertical-col panel" id="idpagedistribuidor" data-header="af-header-4" data-footer="none">
+                <div class="upage vertical-col panel" id="idpagecliente" data-header="af-header-1" data-footer="none">
+                    <ul class="list widget uib_w_8 d-margins" id="idListaProductos" data-uib="app_framework/listview" data-ver="1">
+                        <li class="widget uib_w_9" data-uib="app_framework/listitem" data-ver="1"><a>CEL GAS</a>
+                        </li>
+                        <li class="widget uib_w_10" data-uib="app_framework/listitem" data-ver="1"><a>LLAMA GAS</a>
+                        </li>
+                        <li class="widget uib_w_11" data-uib="app_framework/listitem" data-ver="1"><a>LIMA GAS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="table-thing with-label widget uib_w_34 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idProductorecepcion">Producto</label>
+
+                    <input class="wide-control" type="tel" id="idProductorecepcion">
+                </div>
+                <div class="table-thing with-label widget uib_w_35 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idTiporecepcion">Tipo</label>
+
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idTiporecepcion">
+                </div>
+                <div class="table-thing with-label widget uib_w_36 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idcantidadrecepcion">Cantidad</label>
+
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idcantidadrecepcion">
+                </div><a class="myButton widget uib_w_37 d-margins" data-uib="app_framework/button" data-ver="1" id="idaceptarPedido">Aceptar Pedido</a>
+            </div>
+            <div class="upage vertical-col panel" id="idpagemapaClie" data-header="af-header-2" data-footer="ANDAHU"></div>
+            <div class="upage vertical-col panel" id="idpagePedido" data-header="af-header-3" data-footer="none">
+                <div class="myLabel2" id="idtipogas"><a>CEL GAS</a>
+                </div>
+
+                <table class="mytable">
+                    <thead id="lishead">
+
+                        <tr>
+                            <th>Nro.</th>
+                            <th>PESO</th>
+                            <th>PRESIO</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ListaPedidos">
+
+                    </tbody>
+                </table>
+                <div class="table-thing with-label widget uib_w_15 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idCantidad10K">Cantidad 10 K</label>
+
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idCantidad10K">
+                </div>
+                <div class="table-thing with-label widget uib_w_26 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idCantidad20K">Cantidad 20 K</label>
+
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idCantidad20K">
+                </div>
+                <div class="table-thing with-label widget uib_w_27 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idCantidad50K">Cantidad 50 K</label>
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idCantidad50K">
+                </div>
+                <div class="table-thing with-label widget uib_w_29 d-margins" data-uib="app_framework/input" data-ver="1">
+                    <label class="narrow-control label-inline" for="idCantidadTotal">Precio total</label>
+                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idCantidadTotal">
+                </div><a class="myButton widget uib_w_28 d-margins icon loading" data-uib="app_framework/button" data-ver="1" id="idEnvarPedido">ENVIAR</a>
+            </div>
+            <div class="upage vertical-col panel" id="idpageMapaDistri" data-header="af-header-5" data-footer="af-footer-0">
+
+            </div>
+        </div>
+        <footer class="wrap-element uib_w_40" data-uib="app_framework/footer" data-ver="1" id="af-footer-1"></footer>
+        <footer class="wrap-element uib_w_39" data-uib="app_framework/footer" data-ver="1" id="af-footer-0"></footer>
+        <footer class="wrap-element uib_w_13" data-uib="app_framework/footer" data-ver="1" id="ANDAHU"></footer>
+    </body>
+
+</html>
