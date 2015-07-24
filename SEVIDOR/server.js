@@ -2,7 +2,7 @@ var IPADDRESS="127.0.0.1";
 var PORT=9090
 var express = require('express');
 var bodyParser = require('body-parser');
-
+//var socketio=require('socket.io');
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -14,11 +14,14 @@ var allowCrossDomain = function(req, res, next) {
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(allowCrossDomain);
-
+/*var io=socketio();
+io.use(bodyParser.urlencoded({ extended: false }));
+io.use(allowCrossDomain);*/
 var server = app.listen(PORT,IPADDRESS);
 console.log('Escuchando en '+IPADDRESS+':'+PORT);
+var io = require('socket.io').listen(server);
 //////////////////////////////////////////////////////
-var SOCKET_MONITOR_ID=null;
+/*var SOCKET_MONITOR_ID=null;
 var io = require('socket.io').listen(server);
 io.on('connection', function (socket) {
 	console.log('CONNECTED KEY: '+socket.id);
@@ -42,17 +45,19 @@ io.on('connection', function (socket) {
 	socket.on("disconnect", function() {
 		console.log('DISCONNECT key: '+socket.id);
 	});
-});
+});*/
 //////////////////////////////////////////////////////
 var LOGIN=require('./login.js');
 var ENVIOPEDIDO=require('./envioPedidos.js');
 var PEDIDOS=require('./pedidos.js');
 var PRODUCTOS=require('./productos.js');
+var SOCKETIO=require('./SOCKETIO.js');
 /////////////////////////////////////////////////////
 LOGIN.getByLogin(app);
 PEDIDOS.getByPedido(app);
 ENVIOPEDIDO.getByEnviopedido(app);
 PRODUCTOS.getByProductos(app);
+SOCKETIO.getBySocketio(io);
 /////////////////////////////////////////////////////
 /*app.post('/getLogin', function(req, res){	
 	

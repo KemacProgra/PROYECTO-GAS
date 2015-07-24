@@ -47,7 +47,7 @@
 
         <!-- Recommended location for your JavaScript libraries -->
         <!-- These library references (below) are just examples to give you the general idea... -->
-        <script src="marker.js"></script>
+        <script src="js/marker.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
         <!--  <script src="http://127.0.0.1:9090/socket.io/socket.io.js"></script>-->
         <!-- <script src="lib/mc/hammer.js"></script> -->
@@ -91,7 +91,7 @@
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <header class="wrapping-col wrap-element uib_w_1" data-uib="app_framework/header" data-ver="2" id="af-header-0">
+        <header class="wrapping-col wrap-element uib_w_1 style-74" data-uib="app_framework/header" data-ver="2" id="af-header-0">
             <h1>LOGEO</h1>
         </header>
         <header class="wrapping-col wrap-element uib_w_7 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-1"><a class="button backButton">Back</a>
@@ -110,18 +110,21 @@
             <h1>MAPA UBICACION DEL CLIENTE</h1>
         </header>
 
+        <header class="wrapping-col wrap-element uib_w_41" data-uib="app_framework/header" data-ver="2" id="af-header-0">
+            <h1></h1>
+        </header>
         <div class="uwrap" id="content">
 
             <div class="upage vertical-col panel style-66" id="idpagelogeo" data-header="af-header-0" data-footer="af-footer-1">
                 <div class="table-thing with-label widget uib_w_2 d-margins" data-uib="app_framework/input" data-ver="1">
                     <label class="myLabel label-inline" for="idUsuario">USUARIO</label>
 
-                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idUsuario" value="Distribuidor">
+                    <input class="wide-control" type="email" id="idUsuario" value="Distribuidor">
                 </div>
                 <div class="table-thing with-label widget uib_w_3 d-margins" data-uib="app_framework/input" data-ver="1">
                     <label class="myLabel label-inline" for="idContrasena">PASSWORD</label>
 
-                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idContrasena" value="Distribuidor">
+                    <input class="wide-control" placeholder="Placeholder Text" type="password" id="idContrasena" value="Distribuidor">
                 </div>
                 <div class="table-thing with-label widget uib_w_4 d-margins" data-uib="app_framework/select" data-ver="1">
                     <label class="myLabel label-inline" for="idSelectPerfil">PERFIL</label>
@@ -172,6 +175,7 @@
                             <th>Nro.</th>
                             <th>PESO</th>
                             <th>PRESIO</th>
+                            <th>CANTIDAD</th>
                         </tr>
                     </thead>
                     <tbody id="ListaPedidos">
@@ -181,7 +185,7 @@
                 <div class="table-thing with-label widget uib_w_15 d-margins" data-uib="app_framework/input" data-ver="1">
                     <label class="narrow-control label-inline" for="idCantidad10K">Cantidad 10 K</label>
 
-                    <input class="wide-control" placeholder="Placeholder Text" type="text" id="idCantidad10K">
+                    <input class="wide-control" type="text" id="idCantidad10K">
                 </div>
                 <div class="table-thing with-label widget uib_w_26 d-margins" data-uib="app_framework/input" data-ver="1">
                     <label class="narrow-control label-inline" for="idCantidad20K">Cantidad 20 K</label>
@@ -200,6 +204,7 @@
             <div class="upage vertical-col panel" id="idpageMapaDistri" data-header="af-header-5" data-footer="af-footer-0">
 
             </div>
+            <div class="upage vertical-col left panel" id="idpageEsperaPedidos" data-header="af-header-0" data-footer="none"></div>
         </div>
         <footer class="wrap-element uib_w_40" data-uib="app_framework/footer" data-ver="1" id="af-footer-1"></footer>
         <footer class="wrap-element uib_w_39" data-uib="app_framework/footer" data-ver="1" id="af-footer-0"></footer>

@@ -21,13 +21,13 @@ background-color:gray;
     background-color:#0c93ab;
 }*/
 td {
-    font-size:35px;
+    font-size:20px;
     border: 1px solid #f0f7fa;
 }
 th {
     background-color:#ffffff;
     color: #237C88;
-    font-size:35px;
+    font-size:20px;
     border: 1px solid #f0f7fa;
 }
 tbody tr:hover{

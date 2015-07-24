@@ -7,7 +7,7 @@
  function register_event_handlers()
  {
     
-     PRODUCTOS.crearEnlaces();
+      PRODUCTOS.crearEnlaces();
      PEDIDOS.crearEnlaces();
      ENVIOPEDIDOS.crearEnlaces();
      DISTRIBUIDOR.crearEnlaces();
@@ -42,7 +42,7 @@
                         $("#idGoProducto").click();
                         PRODUCTOS.cargarProductos();
                         MAPACLIENTE.conectarse();
-                         MAPACLIENTE.enviarIdentificador(data.data.nombres);   
+                        MAPACLIENTE.enviarIdentificador(data.data.usuario);
                         },         // callback
                         'Mensaje',            // title
                         'Aceptar'                  // buttonName
@@ -96,29 +96,24 @@
     
         /* button  #idEnvarPedido */
     $(document).on("click", "#idEnvarPedido", function(evt)
-    {   MAPACLIENTE.enviarPosicion();
+    {
          $("#idGomapaClie").click();
-         var nombre=$("#listaPedidos").index[0].val();
+         /*var nombre=$("#listaPedidos").index[0].val();
         var tipo=$("#idContrasena").val();
         var cantidad=$("#idSelectPerfil").val();
         
         	var param={};
         param.nombre=nombre;
         param.tipo=tipo;
-        param.cantidad=cantidad;
-        
-        ENVIOPEDIDOS.cargarEnvioPedidos();
+        param.cantidad=cantidad;*/        ENVIOPEDIDOS.cargarEnvioPedidos();
+        MAPACLIENTE.enviarPosicion();
         /* your code goes here */ 
     });
     
         /* button  #idaceptarPedido */
     $(document).on("click", "#idaceptarPedido", function(evt)
     {
-         MAPADISTRIBUIDOR.conectarse();
-        
         $("#idGoMapaDistri").click();
-        //CONSTRUIRMAPA.iniciarMapa();
-       
         /* your code goes here */ 
     });
     

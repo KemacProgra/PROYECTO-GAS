@@ -37,7 +37,7 @@ var PEDIDOS= (function () {
                 
                 if(data.status===1){
                     $("#idtipogas").empty();
-                   $("#idtipogas").append("<a>"+data.data.nombre+"<a>");
+                   $("#idtipogas").append("<a>"+data.data.nombre+"</a>");
                     
                    $("#ListaPedidos").empty();
                 
@@ -52,13 +52,18 @@ var PEDIDOS= (function () {
                     var precio=document.createElement("td");
                         precio.setAttribute("data-title","PRECIO");
                         precio.appendChild(document.createTextNode(data.data1[i].precio));
+                     var cantidad=document.createElement("td");
+                        cantidad.setAttribute("data-title","CANTIDAD");
+                        var txt=document.createElement("INPUT");
+                            txt.setAttribute("type","text")
+                        cantidad.appendChild(txt);
                   
                     
                    var fila=document.createElement("tr");
                         fila.appendChild(num);
                         fila.appendChild(peso);
                         fila.appendChild(precio);
-                        
+                        fila.appendChild(cantidad);
                     
                     $("#ListaPedidos").append(fila);
                 }
